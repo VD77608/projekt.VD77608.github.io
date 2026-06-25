@@ -1,0 +1,148 @@
+:root {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text-color: #eeeeee;
+    --accent-color: #4f46e5;      /* indigo */
+    --accent-hover: #4338ca;      /* darker indigo */
+    --border-color: #444444;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);   /* #1a1a1a */
+    color: var(--text-color);            /* #eeeeee */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: var(--card-bg);      /* #2d2d2d */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+}
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
+.btn-add {
+    background-color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+.btn-add:hover {
+    background-color: var(--accent-hover);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.book-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.book-card h3 {
+    margin-top: 0;
+}
+.author {
+    color: #bbb;
+    flex-grow: 1;     /* pushes the details link to the bottom */
+}
+.btn-details {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.btn-details:hover {
+    text-decoration: underline;
+}
+
+.book-details {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.btn-back {
+    color: #bbb;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+.author-large {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+.description {
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.project-form {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    max-width: 600px;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-color);   /* dark inset fields */
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.btn-submit {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;    /* full-width button */
+}
+.btn-submit:hover {
+    background-color: var(--accent-hover);
+}
+
+.alert {
+    background-color: #ef4444;   /* red-500 */
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Dodaj Nową Książkę {% endblock %}
+
+{% block content %}
+    <h1>Dodaj nową książkę do bazy</h1>
+    <form method="post" class="project-form">
+        <div class="form-group">
+            <label for="title">Tytuł książki</label>
+            <input type="text" name="title" placeholder="Wpisz tytuł..." value="{{ request.form['title'] }}">
+        </div>
+        <div class="form-group">
+            <label for="author">Autor (tekstowo)</label>
+            <input type="text" name="author" placeholder="Wpisz autora..." value="{{ request.form['author'] }}">
+        </div>
+        <div class="form-group">
+            <label for="description">Opis</label>
+            <textarea name="description" placeholder="Wpisz krótki opis..." rows="5">{{ request.form['description'] }}</textarea>
+        </div>
+        <button type="submit" class="btn-submit">Zapisz książkę</button>
+    </form>
+{% endblock %}

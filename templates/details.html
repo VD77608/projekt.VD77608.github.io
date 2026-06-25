@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ book['title'] }} {% endblock %}
+
+{% block content %}
+    <div class="book-details">
+        <a href="{{ url_for('index') }}" class="btn-back">&larr; Powrót do listy</a>
+        <h1>{{ book['title'] }}</h1>
+        <p class="author-large">Autor: {{ book['author'] }}</p>
+        <hr>
+        <h3>Opis książki:</h3>
+        <p class="description">{{ book['description'] }}</p>
+    </div>
+{% endblock %}
