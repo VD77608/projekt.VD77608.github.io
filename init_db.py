@@ -1,12 +1,12 @@
 import sqlite3
 
-# 1. sqlite3.connect('database.db')
+# 1. sqlite3.connect('database.db') (Podłączenie do bazy danych / Podkluchenie k baze)
 conn = sqlite3.connect('database.db')
 
-# 2. Print success message
+# 2. Print success message (Komunikat o otwarciu / Soobschenie ob otkrytii)
 print("Otwarto bazę danych pomyślnie")
 
-# 3. Create table
+# 3. Create table books (Tworzenie tabeli books / Sozdanije tablicy)
 conn.execute('''
 CREATE TABLE IF NOT EXISTS books (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -16,10 +16,10 @@ CREATE TABLE IF NOT EXISTS books (
 );
 ''')
 
-# 4. Print success message
+# 4. Print success message (Komunikat o utworzeniu tabeli)
 print("Tabela utworzona pomyślnie")
 
-# 5. Insert 9 book records
+# 5. Insert 9 book records (Wstawianie danych startowych / Vstavka nachalnych dannych)
 books = [
     ('Wiedźmin: Ostatnie życzenie', 'Andrzej Sapkowski', 'Zbiór opowiadań wprowadzający do świata wiedźmina Geralta z Rivii, pełen mrocznych baśni i potworów.'),
     ('Rok 1984', 'George Orwell', 'Klasyczna powieść dystopijna przedstawiająca totalitarny świat pod absolutną kontrolą Wielkiego Brata, gdzie prawda jest manipulowana.'),
@@ -34,9 +34,9 @@ books = [
 
 conn.executemany('INSERT INTO books (title, author, description) VALUES (?, ?, ?)', books)
 
-# 6. Commit and close
+# 6. Commit and close (Zatwierdzenie zmian i zamknięcie połączenia / Sohranenije i zakrytije)
 conn.commit()
 conn.close()
 
-# 7. Print final success message
+# 7. Print final success message (Komunikat końcowy / Konec)
 print("Książki zostały pomyślnie dodane do bazy danych!")
