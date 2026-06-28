@@ -1,0 +1,19 @@
+Dokumentacja techniczna: Projekt „Moja Biblioteka”
+
+1. Technologie i architektura
+Strona została zbudowana w oparciu o klasyczny, sprawdzony i wydajny stos technologiczny (tzw. backend-driven web app). Głównym celem było stworzenie stabilnej aplikacji z dynamicznym wyświetlaniem zawartości.
+Backend (Python & Flask): Sercem całego projektu jest framework Flask. Odpowiada on za kompletną logikę biznesową, obsługę żądań HTTP (routing) oraz komunikację pomiędzy bazą danych a warstwą wizualną.
+Baza danych (SQLite): Do przechowywania informacji o książkach (tytuły, autorzy, szczegóły) wykorzystano relacyjną bazę danych. W kodzie zaimplementowano obsługę zapytań SQL oraz zarządzanie połączeniami za pomocą wbudowanego modułu Pythona, co pozwala na bezpieczne zapisywanie, odczytywanie i dodawanie nowych rekordów na stałe do pamięci serwera.
+Frontend (HTML5 & CSS3): Warstwa wizualna opiera się na czystym HTML5, który tworzy strukturę semantyczną strony (formularze, siatki kart). Za całe formatowanie, układ elementów (Flexbox/Grid), animacje przejść (`transition`) oraz efekty wizualne odpowiada nowoczesny CSS3.
+
+2. UI Inspiracja i integracja z kodem
+Główną inspiracją dla stworzenia interfejsu użytkownika (UI) był nowoczesny język projektowania Google Material 3, a w szczególności wygląd platformy Google Play Books. Chodziło o uzyskanie minimalistycznego, intuicyjnego dla użytkownika designu z dużą ilością wolnej przestrzeni.
+Integracja rozwiązań Google w kodzie:
+Typografia i ikony: Bezpośrednio w sekcji `<head>` dokumentu HTML podpięto zewnętrzne API od Google. Zaimportowano stamtąd oficjalny czcionkę Roboto oraz bibliotekę Material Symbols, co pozwoliło na łatwe używanie ustandaryzowanych ikon za pomocą prostych znaczników w kodzie (np. ikona biblioteki `local_library` w nagłówku).
+Karty książek: W stylach CSS odwzorowano styl kart Google – białe tło, zaokrąglenie rogów o wartości `16px` i delikatna szara ramka (`#e0e0e0`). Jako tło „okładki” zaimplementowano liniowy gradient (`linear-gradient`) z ikoną na środku.
+Przyciski i Formularze: Przyciski akcji (jak „Zobacz szczegóły”) oprogramowano jako *Google Outlined Buttons* (kształt pigułki, niebieska ramka i podświetlenie hover). Pola formularza zaprojektowano jako *Outlined Inputs* – domyślnie mają szarą ramkę, a przy kliknięciu (stan `:focus`) płynnie zmieniają obramowanie na podwójną grubość w kolorze Google Blue (`#0b57d0`). Przycisk wysyłania formularza posiada efekt cienia (elevation shadow), co imituje uniesienie przycisku nad makietę.
+
+3. Wdrożenie i uruchamianie projektu
+Projekt jest w pełni uniwersalny i elastyczny pod kątem środowiska uruchomieniowego:
+Tryb lokalny (Localhost): Aplikacja może być bez problemu uruchomiona na lokalnym komputerze deweloperskim. Wystarczy zainstalować Pythona, pobrać wymagane biblioteki za pomocą menedżera pakietów (`pip install -r requirements.txt`) i wystartować skrypt `app.py`.
+Wdrożenie na hostingu (Linux & Python): Strona została przystosowana do działania na dowolnym zewnętrznym hostingu wspierającym środowisko Linux oraz Pythona (np. PythonAnywhere). Konfiguracja opiera się na wykorzystaniu systemowej konsoli Bash do pobierania repozytorium z GitHub (`git clone`), instalacji zależności w izolowanym profilu użytkownika (`pip install --user`) oraz inicjalizacji struktur bazodanowych bezpośrednio z poziomu wiersza poleceń. Za prawidłowe mapowanie ruchu sieciowego na plik aplikacji odpowiada odpowiednio skonfigurowany plik produkcyjny WSGI.
